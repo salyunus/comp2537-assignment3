@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Memory Match</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+  </head>
+
+  <body class="theme-corrupt">
+    <main class="app-shell">
+      <section class="game-header">
+        <p class="eyebrow">COMP 2537 Assignment 3</p>
+        <h1 class="game-title">Pokémon Memory Match</h1>
+        <p class="game-subtitle">Recover data from corrupted save files</p>
+        <br />
+        <p class="hero-text">
+          Match every unstable Pokémon signal before the timer reaches zero and the signal is lost.
+        </p>
+      </section>
+
+      <section class="control-panel" aria-label="Game controls">
+        <div class="control-group">
+          <label for="difficulty">Insert Memory Card</label>
+          <select id="difficulty">
+            <option value="easy">TRAINER</option>
+            <option value="medium">GYM LEADER</option>
+            <option value="hard">RIVAL</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="theme">Display Mode</label>
+          <select id="theme">
+            <option value="corrupt">CORRUPTED</option>
+            <option value="dark">LAVENDER DARK</option>
+            <option value="light">FADED LIGHT</option>
+          </select>
+        </div>
+
+        <button id="start_button" type="button">Start</button>
+
+        <button id="reset_button" type="button">Reset</button>
+
+        <button id="power_button" type="button" disabled>Signal Booster</button>
+      </section>
+
+      <section class="status-grid" aria-label="Game status">
+
+        <div class="status-card">
+          <span class="status-label">Time before corruption</span>
+          <strong id="time_left" class="status-value">0</strong>
+        </div>
+
+        <div class="status-card">
+          <span class="status-label">Clicks</span>
+          <strong id="click_count" class="status-value">0</strong>
+        </div>
+
+        <div class="status-card">
+          <span class="status-label">Unstable Pairs</span>
+          <strong id="pairs_left" class="status-value">0</strong>
+        </div>
+
+        <div class="status-card">
+          <span class="status-label">Recovered pairs</span>
+          <strong id="pairs_matched" class="status-value">0</strong>
+        </div>
+
+        <div class="status-card">
+          <span class="status-label">Total pairs</span>
+          <strong id="total_pairs" class="status-value">0</strong>
+        </div>
+      </section>
+
+      <section id="message" class="game-message" aria-live="polite">
+        Insert a memory card, then press Start.
+      </section>
+
+      <section
+        id="game_grid"
+        class="game-board"
+        aria-label="Memory card board"
+      ></section>
+
+      <footer class="game-footer">
+        <p>Signal source: Unknown</p>
+        <p>Status: Unstable</p>
+      </footer>
+    </main>
+  </body>
+</html>
